@@ -1,0 +1,7 @@
+<h1>All donations to: <%= @organization.name %></h1>
+<br>
+<ul>
+  <% @organization.donations.each do |donation| %>
+  <li><%= donation.date.strftime('%a, %b %e, %Y')%> |  <%= donation.user.name %> | $<%= donation.amount %> </li>
+  <%end  %>
+</ul>

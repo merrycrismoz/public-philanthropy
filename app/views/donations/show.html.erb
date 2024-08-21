@@ -1,0 +1,14 @@
+<h1>Your Donation to <%= @donation.organization.name %>!<br></h1>
+<p>Date: <%= @donation.date %><br></p>
+<p>Amount: <%= @donation.amount %><br></p>
+<p>In Honor Of: <%= @donation.honoree %><br></p>
+<p>Comments: <%= @donation.comments %><br></p>
+
+
+
+
+
+<p><%= link_to "Edit This Donation", edit_donation_path(@donation) %> | <%= link_to "Delete Donation", @donation, :method => :delete %></p>
+
+<br>
+<p><%= link_to "See all your donations", user_donations_path(current_user) %></p>

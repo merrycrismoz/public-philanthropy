@@ -1,0 +1,13 @@
+<h1>Public Philanthropy </h1>
+<br>
+<% if user_signed_in? %>
+  <h2>Hello, <%= current_user.name %>!</h2>
+  <p><%= link_to "Log a Donation", new_user_donation_path(current_user) %></p>
+  <% else %>
+  <h2>Hello, please sign up or sign in to start logging your donations today!</h2>
+<% end  %>
+<br>
+  <p>"No one has ever become poor by giving."<br>
+    –Anne Frank</p>
+
+  <p>Remember to log all your donations and let your good deeds enrich your life. - Cristal, creator of Public Philanthropy</p>

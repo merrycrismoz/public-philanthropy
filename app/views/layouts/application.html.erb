@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>PublicPhilanthropy</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+    <style>
+      .photo {
+        text-align: center;
+        padding: 10px;
+        margin: 4px 0 0 4px;
+        box-shadow: 0 0 0 4px #fff;
+    }
+    .photo img {
+      width: 300px;
+      height: 215px;
+      background-size: cover;
+      object-fit: cover;
+    }
+    h2, h4, h1, h5, p {
+      text-align: center;
+    }
+    body {
+      padding: 30px;
+      font-family: Times;
+    }
+
+    }
+    .navigation a {
+      color: teal;
+      display: inline;
+      padding-right: 100px;
+    }
+    nav {
+    text-align: center;
+    font-size: 20px;
+    margin: 20px 20px 0 ;
+    padding: 10px 0;
+    }
+
+    .button_to { display: flex; justify-content: center; }
+
+    
+
+    </style>
+
+
+  </head>
+
+  <body>
+    <%= render 'layouts/navigation' %>
+    <br>
+    <br>
+    <%= yield %>
+  </body>
+</html>

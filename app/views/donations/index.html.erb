@@ -1,0 +1,11 @@
+  <% if current_user.donations.empty? %>
+    You have not logged any donations.
+  <% else  %>
+    <h1> Your Donations:</h1>
+
+      <% current_user.donations.recent.each do |donation| %>
+      <p><%= donation.date %> | <%= donation.organization.name%> | <%= donation.amount %> | <%= link_to "See full details", user_donation_path(donation.user, donation) %></p>
+      <% end %>
+
+
+  <% end  %>

@@ -1,0 +1,33 @@
+<% if @donation.errors.any? %>
+   <div id="error_explanation">
+     <h2><%= pluralize(@donation.errors.count, "error") %> prohibited this donation from being saved:</h2>
+       <% @donation.errors.full_messages.each do |message| %>
+        <%= message %>
+       <% end %>
+   </div>
+ <% end %>
+
+
+
+<h1>Record a New Donation: </h1>
+<%= form_for @donation do |f|%>
+<%= f.label "Select an organization:" %><br>
+<%= f.collection_select :organization_id, Organization.all.order(:name).uniq, :id, :name, include_blank: true %><br>
+
+  or <br>
+
+<%= f.fields_for :organization, @donation.build_organization do |org_form| %>
+  <%= org_form.label "Add Organization" %><br>
+  <%= org_form.text_field :name, :class => 'form-control' %><br><br>
+<% end %>
+
+<%= f.label :date %><br>
+<%= f.text_field :date, :class => 'form-control' %><br>
+<%= f.label :amount %><br>
+<%= f.text_field :amount, :class => 'form-control' %><br>
+<%= f.label :honoree %><br>
+<%= f.text_field :honoree, :class => 'form-control' %><br>
+<%= f.label :comments %><br>
+<%= f.text_area :comments, :class => 'form-control' %><br>
+<%= f.submit %>
+<% end %>
